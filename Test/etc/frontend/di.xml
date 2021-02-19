@@ -5,7 +5,11 @@
         <plugin name="training_test" type="Training\Test\Plugin\Model\Url"/>
     </type>-->
 
-    <type name="Magento\Framework\View\Element\Template">
+    <!--<type name="Magento\Framework\View\Element\Template">
         <plugin name="training_test" type="Training\Test\Plugin\Block\Template" />
+    </type>-->
+
+    <type name="Magento\Catalog\Controller\Product\View">
+        <plugin name="training_test" type="Training\Test\Plugin\Controller\Product\View" />
     </type>
 </config>
