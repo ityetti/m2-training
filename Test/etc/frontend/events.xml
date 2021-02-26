@@ -5,7 +5,7 @@
         <observer name="training_test" instance="Training\Test\Observer\RedirectToLogin" />
     </event>-->
 
-    <event name="controller_front_send_response_before">
-        <observer name="training_test" instance="Training\Test\Observer\LogPageHtml" />
-    </event>
+    <!--<event name="controller_front_send_response_before">
+        <observer name="training_test" instance="Training\Test\Observer\LogPageHtml"/>
+    </event>-->
 </config>
