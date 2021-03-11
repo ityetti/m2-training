@@ -5,9 +5,14 @@
             <module name="Training_Test" />
         </route>
     </router>-->
-    <router id="standard">
+    <!--<router id="standard">
         <route id="cms" frontName="cms">
             <module name="Training_Test" before="Magento_Cms"/>
+        </route>
+    </router>-->
+    <router id="standard">
+        <route id="catalog" frontName="catalog">
+            <module name="Training_Test" before="Magento_Catalog"/>
         </route>
     </router>
 </config>
