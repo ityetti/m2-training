@@ -13,6 +13,6 @@ class Description
      */
     public function beforeToHtml(MagentoDescription $subject)
     {
-        $subject->getProduct()->setDescription('Test description');
+        $subject->setTemplate('Training_Test::description.phtml');
     }
 }
