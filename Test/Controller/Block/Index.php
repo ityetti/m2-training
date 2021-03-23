@@ -6,7 +6,7 @@ namespace Training\Test\Controller\Block;
 
 use Magento\Framework\App\ActionInterface;
 use Magento\Framework\View\LayoutFactory;
-use Magento\Framework\App\Response\Http;
+use Magento\Framework\Controller\Result\RawFactory;
 
 class Index implements ActionInterface
 {
@@ -16,26 +16,29 @@ class Index implements ActionInterface
     private $layoutFactory;
 
     /**
-     * @var Http
+     * @var RawFactory
      */
-    private $response;
+    private $resultRawFactory;
 
     /**
      * @param LayoutFactory $layoutFactory
-     * @param Http $response
+     * @param RawFactory $resultRawFactory
      */
     public function __construct(
         LayoutFactory $layoutFactory,
-        Http $response
+        RawFactory $resultRawFactory
     ) {
         $this->layoutFactory = $layoutFactory;
-        $this->response = $response;
+        $this->resultRawFactory = $resultRawFactory;
     }
 
     public function execute()
     {
         $layout = $this->layoutFactory->create();
         $block = $layout->createBlock('Training\Test\Block\Test');
-        return $this->response->appendBody($block->toHtml());
+        $resultRaw = $this->resultRawFactory->create();
+        $resultRaw->setContents($block->toHtml());
+
+        return $resultRaw;
     }
 }
