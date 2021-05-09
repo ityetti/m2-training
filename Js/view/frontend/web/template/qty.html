@@ -1,0 +1,9 @@
+<div class="stock-store-box" data-bind="blockLoader: isLoading">
+    <h3 data-bind="i18n: 'Product Stock'"></h3>
+    <div class="stock-store" data-bind="visible: isVisible">
+        <p data-bind="text: productQtyInfo"/>
+    </div>
+    <div class="action">
+        <button type="button" data-bind="i18n: 'Get Qty', click: getQty()"></button>
+    </div>
+</div>

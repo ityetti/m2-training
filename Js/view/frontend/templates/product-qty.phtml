@@ -1,0 +1,21 @@
+<div data-bind="scope: 'productQty'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "productQty": {
+                        "component": "Training_Js/js/qty",
+                        "config": {
+                            "template": "Training_Js/qty",
+                            "url": <?= json_encode($block->getUrl('training_js/qty/index')) ?>,
+                            "id": <?= json_encode($block->getProduct()->getId()); ?>
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
